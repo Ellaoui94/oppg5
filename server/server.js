@@ -11,6 +11,8 @@ app.get("/question/random", (req, res) => {
   res.send({ id, question, answers });
 });
 
+app.use(express.static("../client/dist"));
+
 const server = app.listen(3000, () => {
   console.log(`Hello http://localhost:${server.address().port}`);
 });
